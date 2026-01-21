@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Check, Zap, DollarSign, Smartphone, Search, Settings, ArrowRight, Globe, Layout as LayoutIcon, FileText, Rocket, Users } from "lucide-react";
 
@@ -88,35 +89,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="section-padding bg-background">
+      {/* Cost Comparison */}
+      <section className="section-padding bg-secondary overflow-hidden">
         <div className="container-wide">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-heading md:text-display-sm text-foreground">What We Build</h2>
+            <h2 className="text-heading md:text-display-sm text-foreground">Why Pay Thousands?</h2>
             <p className="mt-4 text-body-lg text-muted-foreground max-w-xl mx-auto">
-              Straightforward web design services for businesses that want results without the complexity.
+              See how GrowthPilot compares to the average web design agency.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="p-6 md:p-8 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-subheading text-foreground">{service.title}</h3>
-                <p className="mt-2 text-body text-muted-foreground">{service.description}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Competitor Card */}
+            <div className="relative p-8 rounded-2xl bg-card border border-border opacity-80 scale-95 origin-right md:origin-center">
+              <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-muted-foreground text-white text-xs font-bold px-3 py-1 rounded-full">
+                THE OTHER GUYS
               </div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline">
-              <Link to="/services" className="gap-2">
-                View All Services <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+              <h3 className="text-xl font-bold text-muted-foreground mb-6">Average Agency</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
+                  <p className="text-4xl font-bold text-foreground/50 line-through decoration-red-500/50">$3,000+</p>
+                </div>
+                <div className="h-px bg-border"></div>
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly Maintenance</p>
+                  <p className="text-2xl font-semibold text-foreground/70">$50 - $150 /mo</p>
+                </div>
+                <div className="h-px bg-border"></div>
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
+                  <p className="text-xl text-foreground/70">4 - 8 weeks</p>
+                </div>
+                <div className="h-px bg-border"></div>
+                <div className="flex flex-col gap-2">
+                   <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                    <span>Hourly fees for updates</span>
+                   </div>
+                   <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                    <span>Separate hosting fees</span>
+                   </div>
+                   <div className="flex items-center gap-3 text-muted-foreground">
+                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                    <span>No ongoing support included</span>
+                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* GrowthPilot Card */}
+            <div className="relative p-8 rounded-2xl bg-card border-2 border-primary shadow-2xl scale-105 z-10">
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-primary text-primary-foreground text-sm font-bold px-4 py-1.5 rounded-full shadow-lg animate-bounce-subtle">
+                BEST VALUE
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                GrowthPilot
+              </h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
+                  <p className="text-5xl font-bold text-foreground">$0</p>
+                </div>
+                <div className="h-px bg-primary/10"></div>
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly All-In</p>
+                  <p className="text-3xl font-bold text-primary">$30 /mo</p>
+                </div>
+                <div className="h-px bg-primary/10"></div>
+                <div>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
+                  <p className="text-2xl font-bold text-foreground">2 - 3 days</p>
+                </div>
+                <div className="h-px bg-primary/10"></div>
+                <div className="flex flex-col gap-2">
+                   <div className="flex items-center gap-3 text-foreground font-medium">
+                    <Check className="h-5 w-5 text-primary" />
+                    <span>Free updates</span>
+                   </div>
+                   <div className="flex items-center gap-3 text-foreground font-medium">
+                    <Check className="h-5 w-5 text-primary" />
+                    <span>Hosting & Security included</span>
+                   </div>
+                   <div className="flex items-center gap-3 text-foreground font-medium">
+                    <Check className="h-5 w-5 text-primary" />
+                    <span>24/7 Support access</span>
+                   </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <Button asChild className="w-full" size="lg">
+                  <Link to="/contact">Switch to Smart & Affordable</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

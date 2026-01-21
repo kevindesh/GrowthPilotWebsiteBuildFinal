@@ -20,7 +20,7 @@ export function Header() {
       <nav className="container-wide flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2 ml-0 md:-ml-6">
           <Logo />
-          <span className="text-2xl md:text-3xl font-bold text-primary">GrowthPilot</span>
+          <span className="text-3xl md:text-4xl font-bold text-primary">GrowthPilot</span>
         </Link>
 
         {/* Desktop Navigation */}
