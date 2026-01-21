@@ -4,6 +4,9 @@ export async function submitToGoogleSheet(formData: {
   email: string;
   phone: string;
   specifications: string;
+  tagline?: string;
+  servicesPricing?: string;
+  valuesMission?: string;
   logo: File | null;
 }) {
   try {
@@ -33,6 +36,9 @@ export async function submitToGoogleSheet(formData: {
       email: formData.email,
       phone: formData.phone,
       specifications: formData.specifications,
+      tagline: formData.tagline || "",
+      servicesPricing: formData.servicesPricing || "",
+      valuesMission: formData.valuesMission || "",
       logo: logoData,
       logoName, 
       logoType

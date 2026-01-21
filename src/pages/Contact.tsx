@@ -26,6 +26,9 @@ export default function Contact() {
     email: "",
     phone: "",
     specifications: "",
+    tagline: "",
+    servicesPricing: "",
+    valuesMission: "",
     logo: null as File | null,
   });
   const [dragActive, setDragActive] = useState(false);
@@ -42,7 +45,17 @@ export default function Contact() {
         description: "We'll be in touch within 24 hours to get started on your website.",
       });
 
-      setFormData({ fullName: "", businessName: "", email: "", phone: "", specifications: "", logo: null });
+      setFormData({ 
+        fullName: "", 
+        businessName: "", 
+        email: "", 
+        phone: "", 
+        specifications: "", 
+        tagline: "", 
+        servicesPricing: "", 
+        valuesMission: "", 
+        logo: null 
+      });
     } catch (error) {
       toast({
         title: "Submission failed",
@@ -179,14 +192,50 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="tagline">Business Tagline (optional)</Label>
+                  <Input
+                    id="tagline"
+                    name="tagline"
+                    placeholder="e.g. 'Quality You Can Trust'"
+                    value={formData.tagline}
+                    onChange={handleChange}
+                    className="h-12"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="specifications">Website Specifications (optional)</Label>
                   <Textarea
                     id="specifications"
                     name="specifications"
-                    placeholder={"Tell us about what you want for your website.\nWhat pages do you need? What background colour (usually black or white)? What colour buttons (up to 2)? What information to collect on the contact form? Any specific features?"}
+                    placeholder={"Tell us about what you want for your website.\nWhat background colour (usually black or white)? What colour buttons (up to 2)? What information to collect on the contact form? Any specific features?"}
                     value={formData.specifications}
                     onChange={handleChange}
                     className="min-h-[150px] resize-none"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="servicesPricing">Services, Packages & Pricing (optional)</Label>
+                  <Textarea
+                    id="servicesPricing"
+                    name="servicesPricing"
+                    placeholder="List your main services, packages, and their prices."
+                    value={formData.servicesPricing}
+                    onChange={handleChange}
+                    className="min-h-[100px] resize-none"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="valuesMission">Business Values & Mission (optional)</Label>
+                  <Textarea
+                    id="valuesMission"
+                    name="valuesMission"
+                    placeholder="What are your core values? What is your business mission?"
+                    value={formData.valuesMission}
+                    onChange={handleChange}
+                    className="min-h-[100px] resize-none"
                   />
                 </div>
 
