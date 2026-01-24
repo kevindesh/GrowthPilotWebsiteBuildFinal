@@ -282,7 +282,7 @@ export default function Contact() {
             {/* Info Sidebar */}
             <div className="space-y-6">
               {/* What's Included */}
-              <div className="p-6 rounded-xl bg-primary text-primary-foreground">
+              <div className="hidden md:block p-6 rounded-xl bg-primary text-primary-foreground">
                 <h3 className="text-subheading mb-4">What's Included</h3>
                 <ul className="space-y-3">
                   {benefits.map((benefit) => (

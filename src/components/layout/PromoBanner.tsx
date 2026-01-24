@@ -39,14 +39,11 @@ export function PromoBanner() {
   }, []);
 
   return (
-    <div className="bg-accent/80 text-accent-foreground py-3 px-4 text-center">
+    <Link to="/contact" className="block bg-accent/80 text-accent-foreground py-3 px-4 text-center hover:bg-accent/90 transition-colors">
       <p className="text-sm md:text-base font-medium">
         🎉 <strong>Limited Time Offer:</strong> Get your first week free when you sign up in the next{" "}
-        <span className="font-bold">{timeLeft}</span>!{" "}
-        <Link to="/contact" className="underline hover:no-underline font-semibold">
-          Claim your offer →
-        </Link>
+        <span className="font-bold">{timeLeft}</span>!
       </p>
-    </div>
+    </Link>
   );
 }

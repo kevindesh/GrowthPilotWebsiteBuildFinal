@@ -99,91 +99,91 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 gap-2 md:gap-8 max-w-4xl mx-auto">
             {/* Competitor Card */}
-            <div className="relative p-8 rounded-2xl bg-card border border-border opacity-80 scale-95 origin-right md:origin-center">
-              <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-muted-foreground text-white text-xs font-bold px-3 py-1 rounded-full">
-                THE OTHER GUYS
+            <div className="relative p-3 md:p-8 rounded-2xl bg-card border border-border opacity-80">
+              <div className="absolute top-0 right-0 -mt-2 -mr-2 md:-mt-3 md:-mr-3 bg-muted-foreground text-white text-[10px] md:text-xs font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-full">
+                OTHERS
               </div>
-              <h3 className="text-xl font-bold text-muted-foreground mb-6">Average Agency</h3>
+              <h3 className="text-sm md:text-xl font-bold text-muted-foreground mb-3 md:mb-6">Average Agency</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-3 md:space-y-6">
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
-                  <p className="text-4xl font-bold text-foreground/50 line-through decoration-red-500/50">$3,000+</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
+                  <p className="text-lg md:text-4xl font-bold text-foreground/50 line-through decoration-red-500/50">$3,000+</p>
                 </div>
                 <div className="h-px bg-border"></div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly Maintenance</p>
-                  <p className="text-2xl font-semibold text-foreground/70">$50 - $150 /mo</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly Maintenance</p>
+                  <p className="text-sm md:text-2xl font-semibold text-foreground/70">$50-150</p>
                 </div>
                 <div className="h-px bg-border"></div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
-                  <p className="text-xl text-foreground/70">4 - 8 weeks</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
+                  <p className="text-sm md:text-xl text-foreground/70">4 - 8 weeks</p>
                 </div>
                 <div className="h-px bg-border"></div>
-                <div className="flex flex-col gap-2">
-                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
-                    <span>Hourly fees for updates</span>
+                <div className="flex flex-col gap-1 md:gap-2">
+                   <div className="flex items-center gap-1.5 md:gap-3 text-muted-foreground text-[10px] md:text-base">
+                    <div className="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-red-400 flex-shrink-0"></div>
+                    <span>Hourly fees</span>
                    </div>
-                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
-                    <span>Separate hosting fees</span>
+                   <div className="flex items-center gap-1.5 md:gap-3 text-muted-foreground text-[10px] md:text-base">
+                    <div className="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-red-400 flex-shrink-0"></div>
+                    <span>Hosting fees</span>
                    </div>
-                   <div className="flex items-center gap-3 text-muted-foreground">
-                    <div className="h-2 w-2 rounded-full bg-red-400"></div>
-                    <span>No ongoing support included</span>
+                   <div className="flex items-center gap-1.5 md:gap-3 text-muted-foreground text-[10px] md:text-base">
+                    <div className="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-red-400 flex-shrink-0"></div>
+                    <span>No support</span>
                    </div>
                 </div>
               </div>
             </div>
 
             {/* GrowthPilot Card */}
-            <div className="relative p-8 rounded-2xl bg-card border-2 border-primary shadow-2xl scale-105 z-10">
-              <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-primary text-primary-foreground text-sm font-bold px-4 py-1.5 rounded-full shadow-lg animate-bounce-subtle">
+            <div className="relative p-3 md:p-8 rounded-2xl bg-card border-2 border-primary shadow-2xl z-10">
+              <div className="absolute top-0 right-0 -mt-2 -mr-2 md:-mt-4 md:-mr-4 bg-primary text-primary-foreground text-[10px] md:text-sm font-bold px-2 py-0.5 md:px-4 md:py-1.5 rounded-full shadow-lg animate-bounce-subtle">
                 BEST VALUE
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+              <h3 className="text-base md:text-2xl font-bold text-primary mb-3 md:mb-6 flex items-center gap-2">
                 GrowthPilot
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-3 md:space-y-6">
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
-                  <p className="text-5xl font-bold text-foreground">$0</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Upfront Cost</p>
+                  <p className="text-2xl md:text-5xl font-bold text-foreground">$0</p>
                 </div>
                 <div className="h-px bg-primary/10"></div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly All-In</p>
-                  <p className="text-3xl font-bold text-primary">$30 /mo</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Monthly All-In</p>
+                  <p className="text-lg md:text-3xl font-bold text-primary">$30 /mo</p>
                 </div>
                 <div className="h-px bg-primary/10"></div>
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
-                  <p className="text-2xl font-bold text-foreground">2 - 3 days</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Turnaround Time</p>
+                  <p className="text-sm md:text-2xl font-bold text-foreground">2 - 3 days</p>
                 </div>
                 <div className="h-px bg-primary/10"></div>
-                <div className="flex flex-col gap-2">
-                   <div className="flex items-center gap-3 text-foreground font-medium">
-                    <Check className="h-5 w-5 text-primary" />
+                <div className="flex flex-col gap-1 md:gap-2">
+                   <div className="flex items-center gap-1.5 md:gap-3 text-foreground font-medium text-[10px] md:text-base">
+                    <Check className="h-3 w-3 md:h-5 md:w-5 text-primary flex-shrink-0" />
                     <span>Free updates</span>
                    </div>
-                   <div className="flex items-center gap-3 text-foreground font-medium">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>Hosting & Security included</span>
+                   <div className="flex items-center gap-1.5 md:gap-3 text-foreground font-medium text-[10px] md:text-base">
+                    <Check className="h-3 w-3 md:h-5 md:w-5 text-primary flex-shrink-0" />
+                    <span>Hosting included</span>
                    </div>
-                   <div className="flex items-center gap-3 text-foreground font-medium">
-                    <Check className="h-5 w-5 text-primary" />
-                    <span>24/7 Support access</span>
+                   <div className="flex items-center gap-1.5 md:gap-3 text-foreground font-medium text-[10px] md:text-base">
+                    <Check className="h-3 w-3 md:h-5 md:w-5 text-primary flex-shrink-0" />
+                    <span>24/7 Support</span>
                    </div>
                 </div>
               </div>
               
-              <div className="mt-8">
-                <Button asChild className="w-full" size="lg">
-                  <Link to="/contact">Switch to Smart & Affordable</Link>
+              <div className="mt-4 md:mt-8">
+                <Button asChild className="w-full text-xs md:text-base px-2 h-9 md:h-11" size="lg">
+                  <Link to="/contact">Switch Now</Link>
                 </Button>
               </div>
             </div>
