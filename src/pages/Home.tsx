@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Cost Comparison */}
-      <section className="section-padding bg-secondary overflow-hidden">
+      <section className="section-padding bg-background overflow-hidden">
         <div className="container-wide">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-heading md:text-display-sm text-foreground">Why Pay Thousands?</h2>
