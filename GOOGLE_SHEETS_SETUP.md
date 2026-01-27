@@ -13,7 +13,8 @@ Ensure your sheet has the following headers in the first row (order matters if y
 7. Tagline
 8. Services & Pricing
 9. Values & Mission
-10. Logo File URL
+10. Referrer
+11. Logo File URL
 
 ## 2. Update your Apps Script
 1. Go to your Google Sheet.
@@ -55,6 +56,7 @@ function doPost(e) {
       data.tagline,
       data.servicesPricing,
       data.valuesMission,
+      data.referrer,
       logoUrl
     ]);
 

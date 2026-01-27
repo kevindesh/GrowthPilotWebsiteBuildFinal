@@ -7,6 +7,7 @@ export async function submitToGoogleSheet(formData: {
   tagline?: string;
   servicesPricing?: string;
   valuesMission?: string;
+  referrer?: string;
   logo: File | null;
 }) {
   try {
@@ -39,6 +40,7 @@ export async function submitToGoogleSheet(formData: {
       tagline: formData.tagline || "",
       servicesPricing: formData.servicesPricing || "",
       valuesMission: formData.valuesMission || "",
+      referrer: formData.referrer || "",
       logo: logoData,
       logoName, 
       logoType

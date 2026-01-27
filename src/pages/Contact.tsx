@@ -29,6 +29,7 @@ export default function Contact() {
     tagline: "",
     servicesPricing: "",
     valuesMission: "",
+    referrer: "",
     logo: null as File | null,
   });
   const [dragActive, setDragActive] = useState(false);
@@ -54,6 +55,7 @@ export default function Contact() {
         tagline: "", 
         servicesPricing: "", 
         valuesMission: "", 
+        referrer: "",
         logo: null 
       });
     } catch (error) {
@@ -236,6 +238,18 @@ export default function Contact() {
                     value={formData.valuesMission}
                     onChange={handleChange}
                     className="min-h-[100px] resize-none"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="referrer">Did anyone refer you? (optional)</Label>
+                  <Input
+                    id="referrer"
+                    name="referrer"
+                    placeholder="Reference Code or Name"
+                    value={formData.referrer}
+                    onChange={handleChange}
+                    className="h-12"
                   />
                 </div>
 
