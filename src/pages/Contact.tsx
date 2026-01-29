@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,6 +19,15 @@ const benefits = [
 
 export default function Contact() {
   const { toast } = useToast();
+  const specTextareaRef = useRef<HTMLTextAreaElement>(null);
+  const specBackdropRef = useRef<HTMLDivElement>(null);
+
+  const handleSpecScroll = () => {
+    if (specTextareaRef.current && specBackdropRef.current) {
+      specBackdropRef.current.scrollTop = specTextareaRef.current.scrollTop;
+    }
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -32,6 +41,22 @@ export default function Contact() {
     referrer: "",
     logo: null as File | null,
   });
+
+  const placeholderLines = [
+    "Tell us about what you want for your website.",
+    "What background colour (usually black or white)? ",
+    "What colour buttons (up to 2)? ",
+    "What information to collect on the contact form? ",
+    "Any specific features?"
+  ];
+  const inputLines = formData.specifications.split('\n');
+  const visiblePlaceholder = placeholderLines.map((line, index) => {
+    if (index < inputLines.length && inputLines[index].length > 0) {
+      return "";
+    }
+    return line;
+  }).join('\n');
+
   const [dragActive, setDragActive] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -207,14 +232,29 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   <Label htmlFor="specifications">Website Specifications (optional)</Label>
-                  <Textarea
-                    id="specifications"
-                    name="specifications"
-                    placeholder={"Tell us about what you want for your website.\nWhat background colour (usually black or white)? What colour buttons (up to 2)? What information to collect on the contact form? Any specific features?"}
-                    value={formData.specifications}
-                    onChange={handleChange}
-                    className="min-h-[150px] resize-none"
-                  />
+                  <div className="relative">
+                    {/* Background Layers Wrapper - Synced Scroll */}
+                    <div
+                      ref={specBackdropRef}
+                      className="absolute inset-0 z-0 overflow-hidden rounded-md border border-transparent bg-background" 
+                      aria-hidden="true"
+                    >
+                       {/* Placeholder Text */}
+                       <div className="px-3 py-2 text-sm text-muted-foreground whitespace-pre-wrap break-words font-sans leading-[1.25rem]">
+                         {visiblePlaceholder}
+                       </div>
+                    </div>
+
+                    <Textarea
+                      id="specifications"
+                      name="specifications"
+                      ref={specTextareaRef}
+                      value={formData.specifications}
+                      onChange={handleChange}
+                      onScroll={handleSpecScroll}
+                      className="min-h-[150px] resize-none bg-transparent relative z-10 font-sans leading-[1.25rem]" 
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
