@@ -2,7 +2,28 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Check, Zap, DollarSign, Smartphone, Search, Settings, ArrowRight, Globe, Layout as LayoutIcon, FileText, Rocket, Users } from "lucide-react";
+import { Check, Zap, DollarSign, Smartphone, Search, Settings, ArrowRight, Globe, Layout as LayoutIcon, FileText, Rocket, Users, ExternalLink } from "lucide-react";
+
+const portfolioItems = [
+  {
+    title: "Dilo Apparel",
+    description: "Comfort wear for nurses. Clean, modern e-commerce interface.",
+    link: "https://diloapparel.com",
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop" 
+  },
+  {
+    title: "King Judah Auto Detailing",
+    description: "Sleek and service-focused website for professional auto detailing.",
+    link: "https://kingjudahdetailing.vercel.app/",
+    image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=800&auto=format&fit=crop" 
+  },
+  {
+    title: "AME Mentorship Network",
+    description: "Platform connecting new AME graduates with established employers.",
+    link: "https://www.amementorship.org/",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop" 
+  }
+];
 
 const trustPoints = [
   { icon: Zap, text: "Fast turnaround" },
@@ -84,6 +105,47 @@ export default function Home() {
                 <point.icon className="h-5 w-5 text-primary" />
                 <span className="text-body font-medium">{point.text}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="section-padding bg-background border-t border-border/50">
+        <div className="container-wide">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-heading md:text-display-sm text-foreground">Recent Work</h2>
+            <p className="mt-4 text-body-lg text-muted-foreground max-w-xl mx-auto">
+              Check out some of the recent websites we&apos;ve built for our amazing clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {portfolioItems.map((item) => (
+              <a 
+                key={item.title} 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group block rounded-2xl overflow-hidden border border-border bg-card transition-all hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="aspect-[4/3] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                    <div className="bg-background/90 text-foreground px-4 py-2 rounded-full font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all">
+                      Visit Site <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5 md:p-6">
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground">{item.description}</p>
+                </div>
+              </a>
             ))}
           </div>
         </div>
